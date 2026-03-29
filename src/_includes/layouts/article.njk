@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+robots: "index, follow"
+canonical: "https://aprendeaserfeliz.org{{ page.url }}"
+stylesheetPath: "../styles.css"
+scriptPath: "../app.js"
+---
+<main class="container article-shell">
+  <section class="section article-section" style="border-bottom:none; padding-top:28px;">
+    <p class="kicker"><a href="../index.html#articulos" class="back-link">← Artículos</a></p>
+    <h1 class="article-title">{{ articleTitle }}</h1>
+    {% if articleIntro %}
+    <p class="section-lead article-intro">{{ articleIntro }}</p>
+    {% endif %}
+
+    <div class="article-card">
+      <article class="article prose-flow">
+        {{ content | safe }}
+      </article>
+    </div>
+
+    {% if relatedHref and relatedLabel %}
+    <div class="panel article-related">
+      <h2 style="margin-top:0;">Para seguir profundizando</h2>
+      {% if relatedText %}<p>{{ relatedText }}</p>{% endif %}
+      <p class="note"><a href="{{ relatedHref }}">Leer también: {{ relatedLabel }}</a></p>
+    </div>
+    {% endif %}
+
+    <div class="panel article-disclaimer">
+      <p class="note" style="margin:0;">
+        Contenido educativo. No sustituye terapia. Si estás en crisis, busca ayuda profesional.
+      </p>
+    </div>
+  </section>
+</main>
