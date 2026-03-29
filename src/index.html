@@ -1,0 +1,202 @@
+---
+layout: 'layouts/base.njk'
+permalink: '/index.html'
+pageTitle: 'Aprende a ser feliz | Entrenamiento en bienestar emocional'
+description: 'Proyecto educativo centrado en el entrenamiento de habilidades psicológicas para mejorar el bienestar emocional mediante mindfulness, psicología positiva y gestión emocional.'
+robots: 'index, follow'
+canonical: 'https://aprendeaserfeliz.org/'
+stylesheetPath: 'styles.css'
+scriptPath: 'app.js'
+isHome: true
+headExtra: |
+  <meta content="Aprende a ser feliz" property="og:title"/>
+  <meta content="Proyecto educativo centrado en el entrenamiento de habilidades psicológicas para mejorar el bienestar emocional mediante mindfulness, psicología positiva y gestión emocional." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://aprendeaserfeliz.org/" property="og:url"/>
+  <meta content="https://aprendeaserfeliz.org/assets/og-image.png" property="og:image"/>
+  <meta content="Aprende a ser feliz" property="og:site_name"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Aprende a ser feliz" name="twitter:title"/>
+  <meta content="Proyecto educativo centrado en el entrenamiento de habilidades psicológicas para mejorar el bienestar emocional mediante mindfulness, psicología positiva y gestión emocional." name="twitter:description"/>
+  <meta content="https://aprendeaserfeliz.org/assets/og-image.png" name="twitter:image"/>
+  <meta content="bienestar emocional, mindfulness, psicología positiva, gestión emocional, entrenamiento mental, felicidad, serenidad" name="keywords"/>
+  <meta content="Aprende a ser feliz" name="author"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"Organization","name":"Aprende a ser feliz","url":"https://aprendeaserfeliz.org/","sameAs":["https://www.instagram.com/aprendeaserfeliz_org/"],"logo":"https://aprendeaserfeliz.org/assets/logo.png"},{"@context":"https://schema.org","@type":"WebSite","name":"Aprende a ser feliz","url":"https://aprendeaserfeliz.org/","inLanguage":"es-ES","publisher":{"@type":"Organization","name":"Aprende a ser feliz","url":"https://aprendeaserfeliz.org/"}}]}</script>
+---
+<main class="container">
+  <!-- INICIO -->
+  <section class="hero" id="inicio">
+    <p class="kicker">Mindfulness · Psicología positiva · Gestión emocional</p>
+    <h1>La felicidad no es euforia permanente.<br/>Es una habilidad entrenable.</h1>
+    <p class="lead">Hemos aprendido a vincular la felicidad a lo que conseguimos. Y cuando no lo logramos —o lo perdemos—, sentimos que nos falta algo.</p>
+    <p class="lead">Aquí encontrarás herramientas claras y prácticas para cultivar una felicidad más estable, desde lo que eres y no desde lo que tienes.</p>
+    <div class="cta">
+      <a class="button" href="#empieza">Empezar por aquí</a>
+      <a class="button ghost" href="#herramientas">Ver herramientas</a>
+    </div>
+    <p class="note">
+      Contenido educativo. No sustituye terapia. Si estás en crisis, busca ayuda profesional.
+    </p>
+  </section>
+
+  <!-- EMPIEZA -->
+  <section class="section" id="empieza">
+    <h2>Empieza por aquí</h2>
+    <p class="section-lead">
+      Siete ideas para romper la "felicidad condicional" y empezar a entrenar tu bienestar desde hoy.
+    </p>
+
+    <ol class="cards">
+      <li class="card">
+        <h3>1) El dolor es inevitable. El sufrimiento se amplifica al resistirlo</h3>
+        <p>Lo que duele no siempre está bajo tu control. La resistencia mental suele añadir carga. La práctica es aprender a relacionarte con el dolor sin multiplicarlo.</p>
+      </li>
+      <li class="card">
+        <h3>2) No creas todo lo que piensas</h3>
+        <p>Un pensamiento es un evento mental, no un hecho. Aprende a observarlo sin fusionarte con él.</p>
+      </li>
+      <li class="card">
+        <h3>3) Entrena tu atención</h3>
+        <p>La atención es tu "músculo" base. Si la entrenas, cambia tu experiencia del día.</p>
+      </li>
+      <li class="card">
+        <h3>4) La perspectiva transforma la experiencia</h3>
+        <p>La realidad importa, pero el significado que le das también. Ampliar perspectiva no es mentirte: es ver más opciones.</p>
+      </li>
+      <li class="card">
+        <h3>5) Equilibra tu foco: también hay cosas que funcionan</h3>
+        <p>El cerebro detecta amenazas con facilidad. Entrénalo para ver también lo que sostiene.</p>
+      </li>
+      <li class="card">
+        <h3>6) Valores antes que estados de ánimo</h3>
+        <p>Los estados suben y bajan. Los valores te dan dirección incluso en días grises.</p>
+      </li>
+      <li class="card">
+        <h3>7) Progreso, no perfección</h3>
+        <p>Esto no va de "ser feliz siempre". Va de volver al camino cada vez más rápido.</p>
+      </li>
+    </ol>
+
+    <div class="panel" style="margin-top:18px;">
+      <h3 style="margin-top:0;">Itinerario recomendado</h3>
+      <ul class="list">
+        {% for item in collections.empieza %}
+          <li>
+            <a href="{{ item.url }}">
+              {{ item.data.pageTitle | replace(" | Aprende a ser feliz", "") }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <p class="note" style="margin-top:10px;">
+        Cuatro lecturas para comprender cómo funciona la mente, qué significa realmente la felicidad en este proyecto, por qué solemos buscar fuera lo que necesitamos construir dentro y cómo convivir mejor con lo que no depende de nosotros.
+      </p>
+    </div>
+
+    <div class="panel" style="margin-top:18px;">
+      <h3 style="margin-top:0;">Tu objetivo real</h3>
+      <p>
+        No es fabricar euforia. Es ganar serenidad, claridad y capacidad de elegir respuesta.
+        Eso es libertad psicológica en versión práctica.
+      </p>
+    </div>
+  </section>
+
+  <!-- HERRAMIENTAS -->
+  <section class="section" id="herramientas">
+    <h2>Herramientas</h2>
+    <p class="section-lead">Prácticas concretas para entrenar atención, pensamiento y regulación emocional en la vida diaria.</p>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Mindfulness básico</h3>
+        <p>Atención al presente sin juicio. Prácticas breves para salir del piloto automático y recuperar la calma.</p>
+        <ul class="list">
+          <li><a href="/herramientas/respiracion-3x3.html">Respiración 3×3</a></li>
+          <li><a href="/herramientas/etiquetado-mental.html">Etiquetado mental</a></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Gestión de pensamientos</h3>
+        <p>Recursos para observar mejor el diálogo interno, ganar perspectiva y reducir la fusión con lo que piensas.</p>
+        <ul class="list">
+          <li><a href="/herramientas/reencuadre.html">Reencuadre</a></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Regulación emocional</h3>
+        <p>Prácticas para identificar lo que sientes, validarlo y responder con más claridad en vez de reaccionar en automático.</p>
+        <ul class="list">
+          <li><a href="/herramientas/pausa-emocional.html">Pausa emocional</a></li>
+        </ul>
+      </article>
+
+      <article class='card'>
+        <h3>Fortalezas y propósito</h3>
+        <p>Recursos para vivir con más dirección interna, menos dependencia de lo externo y mayor conexión con tus valores.</p>
+        <ul class='list'>
+          <li><a href='/herramientas/brujula-de-valores.html'>Brújula de valores</a></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ARTÍCULOS -->
+  <section class="section" id="articulos">
+    <h2>Artículos</h2>
+    <p class="section-lead">
+      Textos breves: qué pasa, por qué pasa, qué puedes practicar hoy.
+    </p>
+    <div class="panel">
+      <ul class="list">
+        {% for item in collections.articulos %}
+          <li>
+            <a href="{{ item.url }}">
+              {{ item.data.pageTitle | replace(" | Aprende a ser feliz", "") }}
+            </a>
+            <span class="tag mono">— {{ item.templateContent | readingTime }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+      <p class="note" style="margin-top:10px;">
+        Cada artículo incluye: qué es, por qué ocurre y una práctica breve para hoy.
+      </p>
+    </div>
+  </section>
+
+  <!-- AVISO -->
+  <section class="section" id="aviso">
+    <h2>Aviso y recursos</h2>
+    <div class="panel">
+      <p>
+        Este sitio es educativo e informativo. No ofrece diagnóstico ni tratamiento, y no sustituye
+        a un profesional de la salud mental.
+      </p>
+      <p>
+        Si sientes que puedes hacerte daño o estás en una crisis, busca ayuda inmediata en tu país o acude a emergencias.
+        Si estás en España, también puedes llamar al <strong>024</strong> (Línea de atención a la conducta suicida).
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <h2>Contacto</h2>
+    <p class="section-lead">
+      Si quieres proponer un tema o sugerir mejoras, puedes escribir aquí.
+    </p>
+    <div class="panel">
+      <p>
+        Email: <span class="mono">hola@aprendeaserfeliz.org</span>
+      </p>
+      <p>
+        Web oficial: <span class="mono">https://aprendeaserfeliz.org/</span>
+      </p>
+      <p class="note">
+        Nota: por simplicidad y para mantener el anonimato, este proyecto no incluye comentarios ni foros.
+      </p>
+    </div>
+  </section>
+</main>
