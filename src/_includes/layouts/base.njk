@@ -6,9 +6,22 @@
   <title>{{ pageTitle }}</title>
   <meta name="description" content="{{ description }}">
   <meta name="robots" content="{{ robots | default('index, follow') }}">
-  <link rel="canonical" href="{{ canonical }}">
+  <link rel="canonical" href="{% if canonical %}{{ canonical }}{% else %}https://aprendeaserfeliz.org{{ page.url }}{% endif %}">
   {% if stylesheetPath %}<link rel="stylesheet" href="{{ stylesheetPath }}">{% else %}<link rel="stylesheet" href="/styles.css">{% endif %}
   {{ headExtra | safe }}
+  {% if articleTitle %}
+  <meta property="og:title" content="{{ articleTitle }}"/>
+  <meta property="og:description" content="{{ description }}"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://aprendeaserfeliz.org{{ page.url }}"/>
+  <meta property="og:image" content="https://aprendeaserfeliz.org/assets/og-image.png"/>
+  <meta property="og:site_name" content="Aprende a ser feliz"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="{{ articleTitle }}"/>
+  <meta name="twitter:description" content="{{ description }}"/>
+  <meta name="twitter:image" content="https://aprendeaserfeliz.org/assets/og-image.png"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://aprendeaserfeliz.org/"},{"@type":"ListItem","position":2,"name":"Artículos","item":"https://aprendeaserfeliz.org/#articulos"},{"@type":"ListItem","position":3,"name":{{ articleTitle | dump | safe }},"item":"https://aprendeaserfeliz.org{{ page.url }}"}]},{"@type":"Article","headline":{{ articleTitle | dump | safe }},"description":{{ description | dump | safe }},"url":"https://aprendeaserfeliz.org{{ page.url }}","mainEntityOfPage":"https://aprendeaserfeliz.org{{ page.url }}","image":["https://aprendeaserfeliz.org/assets/og-image.png"],"inLanguage":"es-ES","author":{"@type":"Organization","name":"Aprende a ser feliz","url":"https://aprendeaserfeliz.org/"},"publisher":{"@type":"Organization","name":"Aprende a ser feliz","url":"https://aprendeaserfeliz.org/","logo":{"@type":"ImageObject","url":"https://aprendeaserfeliz.org/assets/logo.png"}}}]}</script>
+  {% endif %}
 </head>
 <body>
   {% include "partials/header.njk" %}
