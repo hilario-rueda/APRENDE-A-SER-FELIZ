@@ -309,34 +309,100 @@ h2{
   .split{grid-template-columns: 1fr 1fr;}
 }
 
-@media (max-width: 900px){
-  .topbar{
-    flex-direction: column;
-    align-items: flex-start;
+/* Hamburger button — oculto en desktop */
+.nav-toggle{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.nav-toggle span{
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--fg);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+/* Animación X al abrir */
+.nav-toggle[aria-expanded="true"] span:nth-child(1){
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px){
+  .nav-toggle{
+    display: flex;
   }
 
+  .topbar{
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  /* Menú desplegable */
   .nav{
-    justify-content:flex-start;
-    margin-left:0;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(255,255,255,.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    z-index: 9;
+    margin-left: 0;
+  }
+
+  .nav.open{
+    display: flex;
+  }
+
+  .nav a{
+    border: none;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+    color: var(--fg);
+    font-size: 15px;
+    padding: 14px 18px;
+    width: 100%;
+  }
+
+  .nav a:last-child{
+    border-bottom: none;
+  }
+
+  .nav a:hover{
+    background: var(--card);
+    border-color: var(--line);
+    color: var(--fg);
   }
 }
 
 @media (max-width: 620px){
-  .brand{
-    align-items:flex-start;
-  }
-
   .brand-title{
-    font-size:24px;
+    font-size: 20px;
   }
 
   .brand-subtitle{
-    font-size:13px;
-  }
-
-  .nav a{
-    font-size:12px;
-    padding:7px 10px;
+    font-size: 12px;
   }
 }
 
