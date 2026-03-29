@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="robots" content="{{ robots | default('index, follow') }}">
+  <link rel="canonical" href="{{ canonical }}">
+  {% if stylesheetPath %}<link rel="stylesheet" href="{{ stylesheetPath }}">{% else %}<link rel="stylesheet" href="/styles.css">{% endif %}
+  {{ headExtra | safe }}
+</head>
+<body>
+  {% include "partials/header.njk" %}
+  {{ content | safe }}
+  {% include "partials/footer.njk" %}
+  {% if scriptPath %}<script src="{{ scriptPath }}"></script>{% else %}<script src="/app.js"></script>{% endif %}
+</body>
+</html>
