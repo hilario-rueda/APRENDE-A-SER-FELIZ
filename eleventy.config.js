@@ -26,7 +26,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addFilter("readingTime", (content) => {
     const wordsPerMinute = 200; // Velocidad promedio
     const text = content.replace(/<[^>]*>/g, ""); // Limpiar HTML si lo hay
-    const words = text.split(/\s+/).length;
+    const words = text.trim().split(/\s+/).length;
     const minutes = Math.ceil(words / wordsPerMinute);
     return `${minutes} min de lectura`;
   });

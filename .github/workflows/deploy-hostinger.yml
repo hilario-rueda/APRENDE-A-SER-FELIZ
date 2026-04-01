@@ -1,0 +1,39 @@
+name: Deploy to Hostinger
+
+# Se activa al hacer push a la rama main (producción)
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Construir sitio
+        run: npm run build
+
+      - name: Desplegar vía FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./_site/
+          # Directorio destino en Hostinger.
+          # Comprueba en hPanel → Administrador de archivos cuál es la ruta exacta.
+          # Normalmente es ./ si el FTP ya apunta a public_html, o public_html/ si no.
+          server-dir: ./
