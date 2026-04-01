@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Estilo Instagram — Aprende a ser feliz</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, serif; background: #faf9f7; color: #2e3a45; line-height: 1.6; }
+
+  .page { max-width: 780px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+
+  /* Header */
+  .brand-header { display: flex; align-items: center; gap: 20px; padding: 2rem; background: #ffffff; border-radius: 16px; border: 0.5px solid #e0dbd4; margin-bottom: 3rem; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .logo-mark svg { display: block; }
+  .brand-info h1 { font-size: 20px; font-weight: 600; color: #3d5478; font-family: Georgia, serif; letter-spacing: -0.02em; }
+  .brand-info p { font-size: 12px; color: #8a9baa; font-family: 'Helvetica Neue', sans-serif; margin-top: 2px; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* Section */
+  .section { margin-bottom: 2.5rem; }
+  .section-title { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #a0abb5; margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 0.5px solid #e8e4de; font-family: 'Helvetica Neue', sans-serif; }
+
+  /* Colors */
+  .colors-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .color-swatch { border-radius: 10px; overflow: hidden; border: 0.5px solid #e8e4de; }
+  .color-block { height: 60px; }
+  .color-info { padding: 8px 10px; background: #fff; }
+  .color-info .name { font-size: 11px; font-weight: 600; color: #2e3a45; font-family: 'Helvetica Neue', sans-serif; }
+  .color-info .hex { font-size: 10px; color: #a0abb5; font-family: 'Courier New', monospace; }
+  .color-info .role { font-size: 10px; color: #8a9baa; margin-top: 2px; font-family: 'Helvetica Neue', sans-serif; }
+
+  /* Typography */
+  .type-row { padding: 1.2rem 1.4rem; background: #fff; border-radius: 10px; border: 0.5px solid #e8e4de; margin-bottom: 8px; }
+  .type-specimen { color: #2e3a45; margin-bottom: 6px; }
+  .type-meta { font-size: 10px; color: #a0abb5; font-family: 'Courier New', monospace; }
+
+  /* Formats */
+  .formats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .format-card { border: 0.5px solid #e8e4de; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .format-preview { aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 18px; position: relative; }
+  .format-footer { padding: 12px 14px; border-top: 0.5px solid #e8e4de; background: #fff; }
+  .format-footer p { font-size: 12px; font-weight: 600; color: #2e3a45; font-family: 'Helvetica Neue', sans-serif; }
+  .format-footer span { font-size: 10px; color: #a0abb5; font-family: 'Helvetica Neue', sans-serif; }
+
+  .pill { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; margin-bottom: 12px; font-family: 'Helvetica Neue', sans-serif; }
+  .pill-blue { background: #e8edf5; color: #3d5478; }
+  .pill-sage { background: #e5ede6; color: #3a5e3d; }
+  .pill-warm { background: #f0e8df; color: #7a4f30; }
+
+  .mock-serif { font-family: Georgia, serif; color: #2e3a45; text-align: center; line-height: 1.5; font-size: 13px; }
+  .mock-divider { width: 28px; height: 1.5px; background: #c8d4e0; margin: 10px auto; border-radius: 2px; }
+  .mock-sig { font-size: 8px; color: #8a9baa; margin-top: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-family: 'Helvetica Neue', sans-serif; }
+  .mock-accent-bar { width: 3px; border-radius: 2px; background: #6b8fae; align-self: stretch; margin-right: 12px; flex-shrink: 0; }
+  .mock-dots { display: flex; gap: 4px; margin-top: 10px; align-self: flex-start; margin-left: 15px; }
+  .dot { width: 5px; height: 5px; border-radius: 50%; background: #c8d4e0; }
+  .dot.on { background: #3d5478; width: 14px; border-radius: 3px; }
+  .bubble { background: #e8edf5; border-radius: 12px; padding: 10px 14px; width: 100%; }
+  .bubble p { font-size: 11px; color: #2e3a45; font-family: Georgia, serif; line-height: 1.5; }
+  .opts-row { display: flex; gap: 5px; margin-top: 8px; width: 100%; }
+  .opt-btn { flex: 1; background: #3d5478; color: #fff; border-radius: 6px; font-size: 8px; padding: 5px 2px; text-align: center; font-weight: 600; font-family: 'Helvetica Neue', sans-serif; letter-spacing: 0.04em; }
+
+  /* Rules */
+  .rules-list { display: flex; flex-direction: column; gap: 8px; }
+  .rule { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; background: #fff; border-radius: 10px; border: 0.5px solid #e8e4de; }
+  .rule-icon { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; margin-top: 1px; font-family: 'Helvetica Neue', sans-serif; }
+  .do { background: #e5ede6; color: #3a5e3d; }
+  .dont { background: #f5e5e5; color: #7a2b2b; }
+  .rule-text p { font-size: 12px; font-weight: 600; color: #2e3a45; font-family: 'Helvetica Neue', sans-serif; margin-bottom: 2px; }
+  .rule-text span { font-size: 11px; color: #8a9baa; font-family: 'Helvetica Neue', sans-serif; line-height: 1.5; }
+
+  /* Prompts */
+  .prompt-box { background: #fff; border-radius: 10px; border: 0.5px solid #e8e4de; border-left: 3px solid #6b8fae; padding: 12px 14px; margin-bottom: 10px; }
+  .prompt-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6b8fae; margin-bottom: 6px; font-family: 'Helvetica Neue', sans-serif; }
+  .prompt-text { font-size: 11px; color: #6b7a85; line-height: 1.65; font-family: 'Courier New', monospace; }
+
+  /* Rhythm */
+  .rhythm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .rhythm-card { background: #fff; border-radius: 10px; border: 0.5px solid #e8e4de; padding: 1.2rem; text-align: center; }
+  .rhythm-card .num { font-size: 28px; font-weight: 300; font-family: Georgia, serif; }
+  .rhythm-card .label { font-size: 10px; color: #8a9baa; margin-top: 4px; font-family: 'Helvetica Neue', sans-serif; line-height: 1.4; }
+  .note { font-size: 11px; color: #a0abb5; margin-top: 8px; font-family: 'Helvetica Neue', sans-serif; }
+
+  /* Footer */
+  .doc-footer { text-align: center; padding-top: 2rem; border-top: 0.5px solid #e8e4de; margin-top: 1rem; }
+  .doc-footer p { font-size: 11px; color: #c8d4e0; font-family: 'Helvetica Neue', sans-serif; letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="brand-header">
+    <div class="logo-mark">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+        <circle cx="19" cy="21" r="3" fill="#3d5478"/>
+        <circle cx="37" cy="21" r="3" fill="#3d5478"/>
+        <path d="M15 28 Q28 38 41 28" stroke="#3d5478" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="brand-info">
+      <h1>Aprende a ser feliz</h1>
+      <p>Guía de estilo Instagram · v1.0</p>
+    </div>
+  </div>
+
+  <!-- Paleta -->
+  <div class="section">
+    <p class="section-title">Paleta de color</p>
+    <div class="colors-grid">
+      <div class="color-swatch">
+        <div class="color-block" style="background:#3d5478;"></div>
+        <div class="color-info"><p class="name">Slate</p><p class="hex">#3d5478</p><p class="role">Principal / logo</p></div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-block" style="background:#6b8fae;"></div>
+        <div class="color-info"><p class="name">Slate claro</p><p class="hex">#6b8fae</p><p class="role">Acentos, divisores</p></div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-block" style="background:#c4a882;"></div>
+        <div class="color-info"><p class="name">Arena</p><p class="hex">#c4a882</p><p class="role">Calidez, fondos</p></div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-block" style="background:#a0b89a;"></div>
+        <div class="color-info"><p class="name">Salvia</p><p class="hex">#a0b89a</p><p class="role">Naturaleza, calma</p></div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-block" style="background:#c9b8d4;"></div>
+        <div class="color-info"><p class="name">Lavanda</p><p class="hex">#c9b8d4</p><p class="role">Introspección</p></div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-block" style="background:#f7f5f2;"></div>
+        <div class="color-info"><p class="name">Crema</p><p class="hex">#f7f5f2</p><p class="role">Fondo cálido</p></div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-block" style="background:#f0ede8;"></div>
+        <div class="color-info"><p class="name">Marfil</p><p class="hex">#f0ede8</p><p class="role">Fondo suave</p></div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-block" style="background:#e8edf5;"></div>
+        <div class="color-info"><p class="name">Azul pálido</p><p class="hex">#e8edf5</p><p class="role">Fondo frío</p></div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-block" style="background:#2e3a45;"></div>
+        <div class="color-info"><p class="name">Carbón</p><p class="hex">#2e3a45</p><p class="role">Texto principal</p></div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-block" style="background:#ffffff; border-bottom: 0.5px solid #e8e4de;"></div>
+        <div class="color-info"><p class="name">Blanco</p><p class="hex">#ffffff</p><p class="role">Fondo minimalista</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tipografía -->
+  <div class="section">
+    <p class="section-title">Tipografía</p>
+    <div class="type-row">
+      <p class="type-specimen" style="font-size:22px; font-weight:400; font-family:Georgia,serif; color:#2e3a45;">La mente aprende de lo que repites.</p>
+      <p class="type-meta">Serif regular · Títulos principales · 22–28px</p>
+    </div>
+    <div class="type-row">
+      <p class="type-specimen" style="font-size:18px; font-family:Georgia,serif; color:#2e3a45;">Tus <em>hábitos mentales</em> crean tu experiencia.</p>
+      <p class="type-meta">Serif regular + cursiva · Énfasis emocional · 16–20px</p>
+    </div>
+    <div class="type-row">
+      <p class="type-specimen" style="font-size:12px; font-weight:600; color:#6b8fae; letter-spacing:0.12em; text-transform:uppercase; font-family:'Helvetica Neue',sans-serif;">Psicología aplicada</p>
+      <p class="type-meta">Sans caps · Etiqueta / kicker · 11–13px</p>
+    </div>
+    <div class="type-row">
+      <p class="type-specimen" style="font-size:11px; color:#8a9baa; letter-spacing:0.1em; text-transform:uppercase; font-family:'Helvetica Neue',sans-serif;">Aprende a ser feliz</p>
+      <p class="type-meta">Sans caps · Firma de marca · 10–12px</p>
+    </div>
+  </div>
+
+  <!-- Formatos -->
+  <div class="section">
+    <p class="section-title">Los 3 formatos de publicación</p>
+    <div class="formats-grid">
+
+      <div class="format-card">
+        <div class="format-preview" style="background:#ffffff;">
+          <span class="pill pill-blue">Psicología</span>
+          <p class="mock-serif">La gratitud no borra el malestar.<br><em>Lo equilibra un poco.</em></p>
+          <div class="mock-divider"></div>
+          <p class="mock-sig">Aprende a ser feliz</p>
+        </div>
+        <div class="format-footer">
+          <p>Reflexión breve</p>
+          <span>Fondo blanco o crema · Texto solo</span>
+        </div>
+      </div>
+
+      <div class="format-card">
+        <div class="format-preview" style="background:#edf0ea;">
+          <span class="pill pill-sage">Psicología aplicada</span>
+          <div style="display:flex; align-items:flex-start; width:100%;">
+            <div class="mock-accent-bar"></div>
+            <p class="mock-serif" style="text-align:left; font-size:12px;"><strong>Rumiación:</strong><br>por qué tu mente<br>no se calla</p>
+          </div>
+          <div class="mock-dots">
+            <div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <p class="mock-sig">Aprende a ser feliz</p>
+        </div>
+        <div class="format-footer">
+          <p>Carrusel educativo</p>
+          <span>Fondo crema · 6–10 slides</span>
+        </div>
+      </div>
+
+      <div class="format-card">
+        <div class="format-preview" style="background:#f0ede8;">
+          <span class="pill pill-warm">Reflexiona</span>
+          <div class="bubble">
+            <p>¿Cuántas veces hoy reaccionaste antes de pensar?</p>
+          </div>
+          <div class="opts-row">
+            <div class="opt-btn">Casi nunca</div>
+            <div class="opt-btn">A veces</div>
+            <div class="opt-btn">Siempre</div>
+          </div>
+          <p class="mock-sig">Aprende a ser feliz</p>
+        </div>
+        <div class="format-footer">
+          <p>Pregunta / reto</p>
+          <span>Fondo marfil · Genera interacción</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Reglas -->
+  <div class="section">
+    <p class="section-title">Reglas visuales</p>
+    <div class="rules-list">
+      <div class="rule">
+        <div class="rule-icon do">✓</div>
+        <div class="rule-text"><p>Fondo siempre limpio, nunca saturado</p><span>Blanco, crema (#f7f5f2) o marfil (#f0ede8) como base. El color entra solo en la etiqueta pill o el acento lateral.</span></div>
+      </div>
+      <div class="rule">
+        <div class="rule-icon do">✓</div>
+        <div class="rule-text"><p>Máximo 2 colores por publicación</p><span>Fondo neutro + un color de acento (slate, salvia, arena o lavanda según el tema).</span></div>
+      </div>
+      <div class="rule">
+        <div class="rule-icon do">✓</div>
+        <div class="rule-text"><p>Siempre llevar la firma de marca</p><span>"Aprende a ser feliz" en caps pequeñas, slate claro, posición inferior centrada.</span></div>
+      </div>
+      <div class="rule">
+        <div class="rule-icon dont">✗</div>
+        <div class="rule-text"><p>Sin paisajes ni fondos fotográficos</p><span>Los fondos van en blanco o color plano. Sin imágenes de naturaleza, texturas ni fotografías.</span></div>
+      </div>
+      <div class="rule">
+        <div class="rule-icon dont">✗</div>
+        <div class="rule-text"><p>Sin tipografía script ni mezclas de fuente</p><span>Solo serif clásica (Georgia) + sans para etiquetas. Sin cursivas decorativas.</span></div>
+      </div>
+      <div class="rule">
+        <div class="rule-icon dont">✗</div>
+        <div class="rule-text"><p>Sin frases sin contexto</p><span>Cada slide del carrusel debe tener sentido solo, sin necesitar leer el anterior.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prompts -->
+  <div class="section">
+    <p class="section-title">Prompts para generar imágenes (ChatGPT / Gemini)</p>
+    <div class="prompt-box">
+      <p class="prompt-label">Reflexión breve · Fondo blanco</p>
+      <p class="prompt-text">Square Instagram post 1080x1080px. Clean white background. Centered text layout. Top: small uppercase sans-serif label in pale blue pill (#e8edf5, text #6b8fae). Center: serif font text in dark slate (#2e3a45) — first line regular weight, second line italic. A thin 24px horizontal divider line in light slate (#c8d4e0) between text blocks. Bottom: small caps brand signature "Aprende a ser feliz" in light slate (#8a9baa). Minimalist, editorial, calm psychology aesthetic. No photos, no gradients, no decorative elements.</p>
+    </div>
+    <div class="prompt-box">
+      <p class="prompt-label">Carrusel educativo · Portada</p>
+      <p class="prompt-text">Square Instagram carousel cover slide 1080x1080px. Warm cream background (#edf0ea). Left vertical accent bar 4px in sage green (#a0b89a). Top-left: small pill label in green tones (#e5ede6, text #3a5e3d). Main serif title in dark slate (#2e3a45), left-aligned. Slide counter dots bottom-left. Brand signature "Aprende a ser feliz" bottom-center in muted sage. Minimalist, structured, psychology editorial style. Flat color only.</p>
+    </div>
+    <div class="prompt-box">
+      <p class="prompt-label">Pregunta / reto · Fondo marfil</p>
+      <p class="prompt-text">Square Instagram post 1080x1080px. Ivory background (#f0ede8). Top: small uppercase pill label in warm sand (#f0e8df, text #c4a882). Center: large rounded rectangle in pale blue (#e8edf5) with serif question text in dark slate. Below: three small rounded answer buttons in slate blue (#3d5478) with white text. Bottom: small caps "Aprende a ser feliz" in muted tone. Calm, interactive-feeling design. Flat colors only.</p>
+    </div>
+  </div>
+
+  <!-- Ritmo -->
+  <div class="section">
+    <p class="section-title">Ritmo de publicación sugerido</p>
+    <div class="rhythm-grid">
+      <div class="rhythm-card">
+        <p class="num" style="color:#3d5478;">2×</p>
+        <p class="label">Reflexiones<br>por semana</p>
+      </div>
+      <div class="rhythm-card">
+        <p class="num" style="color:#3a5e3d;">1×</p>
+        <p class="label">Carrusel<br>por semana</p>
+      </div>
+      <div class="rhythm-card">
+        <p class="num" style="color:#7a4f30;">1×</p>
+        <p class="label">Pregunta<br>por semana</p>
+      </div>
+    </div>
+    <p class="note">Total: 4 publicaciones/semana · Lunes (reflexión) · Miércoles (carrusel) · Viernes (pregunta) · Cada carrusel basado en un artículo o herramienta de la web.</p>
+  </div>
+
+  <div class="doc-footer">
+    <p>Aprende a ser feliz · Guía de estilo Instagram v1.0</p>
+  </div>
+
+</div>
+</body>
+</html>
