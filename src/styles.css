@@ -294,6 +294,87 @@ h2{
   background: var(--card);
 }
 
+/* Podcast */
+.podcast-episode{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+
+.podcast-meta{
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.podcast-meta h3{
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--fg);
+}
+
+.duration-tag{
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--slate-light);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.podcast-episode p{
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.podcast-episode audio{
+  width: 100%;
+  margin-top: 4px;
+  accent-color: var(--slate);
+}
+
+.podcast-tier-label{
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 24px 0 12px;
+}
+
+.recursos-download{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.recursos-download-info h3{
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--fg);
+}
+
+.recursos-download-info p{
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
 /* Footer */
 .footer{
   padding-top: 32px;
